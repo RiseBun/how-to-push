@@ -66,7 +66,7 @@ git config --global credential.helper store   # 明文存磁盘，不推荐在�
 
 说明：设置好后，第一次输入用户名+Token 后会保存，下一次无需再输。
 
-## 1. 初始化仓库（只需要做一次）
+## 4. 初始化仓库（每个项目只需要做一次）
 
 ```bash
 cd "项目路径"      # 进入你的项目目录
@@ -104,3 +104,4 @@ git add .
 git commit -m "update: 修改说明"
 git push
 ```
+## 或通过vscode直接操作
