@@ -4,7 +4,7 @@
 ## 1. 初始化仓库（只需要做一次）
 
 ```bash
-cd D:\stm32_dev_env      # 进入你的项目目录
+cd "项目路径"      # 进入你的项目目录
 git init                 # 初始化 Git 仓库
 git branch -M main       # 把默认分支改名为 main
 ```
