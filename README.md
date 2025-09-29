@@ -1,6 +1,87 @@
 # how-to-push
 # Git 本地到 GitHub 最简流程
 
+# 从 0 开始配置 Git，并用 **HTTPS** 方式推送代码（GitHub）
+
+> 适用平台：Windows / macOS / Linux  
+> 目标：完成 Git 安装 → 配置用户名邮箱 → 生成并使用 **PAT**（Personal Access Token）→ 通过 **HTTPS** 推送代码到 GitHub
+
+---
+
+## 目录
+1. [安装 Git](#安装-git)
+2. [初始化配置（用户名与邮箱）](#初始化配置用户名与邮箱)
+3. [创建 GitHub 个人访问令牌（PAT）](#创建-github-个人访问令牌pat)
+4. [设置凭据保存（避免每次输入）](#设置凭据保存避免每次输入)
+5. [两种常见起步方式](#两种常见起步方式)
+   - [A. 新建仓库并推送到 GitHub](#a-新建仓库并推送到-github)
+   - [B. 已有 GitHub 仓库，先克隆再开发](#b-已有-github-仓库先克隆再开发)
+6. [验证与常用命令](#验证与常用命令)
+7. [常见问题速查](#常见问题速查)
+
+---
+
+## 安装 Git
+
+- **Windows**：到 <https://git-scm.com/download/win> 下载并安装（一路下一步即可）。
+- **macOS**：安装 Xcode Command Line Tools 或 `brew install git`。
+- **Linux (Debian/Ubuntu)**：
+  ```bash
+  sudo apt update && sudo apt install -y git
+
+
+
+
+
+  git --version
+
+初始化配置（用户名与邮箱）
+
+这两项会写入每次提交的作者信息，邮箱建议与 GitHub 绑定邮箱一致。
+
+git config --global user.name  "你的名字"
+git config --global user.email "你的邮箱@example.com"
+
+# 可选：更友好的默认分支名
+git config --global init.defaultBranch main
+
+# 查看全局配置
+git config --global --list
+
+
+创建 GitHub 个人访问令牌（PAT）
+
+HTTPS 推送必须使用 Token，而不是 GitHub 密码。
+位置：GitHub -> Settings -> Developer settings -> Personal access tokens（建议 Fine-grained token）
+权限建议：至少勾选 repo（读写代码）。保存后会得到一串 Token（只显示一次，务必复制好）。
+
+首次推送或拉取时，当命令行提示输入：
+
+Username：你的 GitHub 用户名（不是邮箱）
+
+Password：粘贴刚生成的 Token
+
+设置凭据保存（避免每次输入）
+Windows（Git Credential Manager 默认已启用）
+git config --global credential.helper manager
+
+macOS（使用系统钥匙串）
+git config --global credential.helper osxkeychain
+
+Linux（用内置 credential cache 或 libsecret）
+
+短期缓存（15 分钟）：
+
+git config --global credential.helper 'cache --timeout=3600'  # 1小时
+
+
+或使用 libsecret（不同发行版略有差异）：
+
+git config --global credential.helper store   # 明文存磁盘，不推荐在共享机器
+
+
+说明：设置好后，第一次输入用户名+Token 后会保存，下一次无需再输。
+
 ## 1. 初始化仓库（只需要做一次）
 
 ```bash
