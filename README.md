@@ -41,7 +41,7 @@ git config --global --list
 位置：GitHub -> Settings -> Developer settings -> Personal access tokens（建议 Fine-grained token）
 权限建议：至少勾选 repo（读写代码）。保存后会得到一串 Token（只显示一次，务必复制好）。
 
-首次推送或拉取时，当命令行提示输入：
+注意首次推送或拉取时，当命令行提示输入：
  ```bash
 Username：你的 GitHub 用户名（不是邮箱）
 
