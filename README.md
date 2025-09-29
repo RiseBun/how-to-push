@@ -6,20 +6,6 @@
 > 适用平台：Windows / macOS / Linux  
 > 目标：完成 Git 安装 → 配置用户名邮箱 → 生成并使用 **PAT**（Personal Access Token）→ 通过 **HTTPS** 推送代码到 GitHub
 
----
-
-## 目录
-1. [安装 Git](#安装-git)
-2. [初始化配置（用户名与邮箱）](#初始化配置用户名与邮箱)
-3. [创建 GitHub 个人访问令牌（PAT）](#创建-github-个人访问令牌pat)
-4. [设置凭据保存（避免每次输入）](#设置凭据保存避免每次输入)
-5. [两种常见起步方式](#两种常见起步方式)
-   - [A. 新建仓库并推送到 GitHub](#a-新建仓库并推送到-github)
-   - [B. 已有 GitHub 仓库，先克隆再开发](#b-已有-github-仓库先克隆再开发)
-6. [验证与常用命令](#验证与常用命令)
-7. [常见问题速查](#常见问题速查)
-
----
 
 ## 安装 Git
 
@@ -28,12 +14,12 @@
 - **Linux (Debian/Ubuntu)**：
   ```bash
   sudo apt update && sudo apt install -y git
-
-
-
-
-
+  ```
+检查是否安装成功
+ ```bash
   git --version
+ ```
+
 
 初始化配置（用户名与邮箱）
 
