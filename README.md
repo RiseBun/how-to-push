@@ -26,11 +26,11 @@
 git config --global user.name  "你的名字"
 git config --global user.email "你的邮箱@example.com"
  ```
-# 可选：更友好的默认分支名
+## 可选：更友好的默认分支名
  ```bash
 git config --global init.defaultBranch main
  ```
-# 查看全局配置
+## 查看全局配置
  ```bash
 git config --global --list
  ```
@@ -41,7 +41,7 @@ git config --global --list
 位置：GitHub -> Settings -> Developer settings -> Personal access tokens（建议 Fine-grained token）
 权限建议：至少勾选 repo（读写代码）。保存后会得到一串 Token（只显示一次，务必复制好）。
 
-# 首次推送或拉取时，当命令行提示输入：
+## 首次推送或拉取时，当命令行提示输入：
  ```bash
 Username：你的 GitHub 用户名（不是邮箱）
 
